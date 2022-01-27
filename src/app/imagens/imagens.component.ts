@@ -22,7 +22,6 @@ export class ImagensComponent implements OnInit {
   getImagens() {
     return this.crudService.getDados(this.tipo).subscribe(dados => {
       this.dadosImagens = dados;
-      console.log(this.dadosImagens)
       this.loading = false;
     }, error => {
       console.log(error)

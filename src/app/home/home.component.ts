@@ -1,3 +1,4 @@
+import { CrudService } from './../crud.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  titulo: ''
+  texto: ''
+
+
+  postagem
+
+  constructor(private crudService: CrudService) {
+    this.inserirPost()
+  }
+
 
   ngOnInit() {
   }
+
+  inserirPost() {
+    return this.crudService.setDados(this.titulo, this.texto).subscribe(dados => {
+      console.log(dados)
+    }, error => {
+
+    })
+  }
+
 
 }

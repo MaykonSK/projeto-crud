@@ -9,7 +9,7 @@ import { NovaPostagemComponent } from './nova-postagem/nova-postagem.component';
   declarations: [PostsComponent, NovaPostagemComponent],
   imports: [
     CommonModule,
-    PostsRoutingModule
+    PostsRoutingModule,
   ]
 })
 export class PostsModule { }

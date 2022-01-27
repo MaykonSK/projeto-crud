@@ -1,3 +1,20 @@
-<h1>Home</h1>
-<i class="fa fa-user" aria-hidden="true"></i>
+<div class="jumbotron">
+  <h1 class="display-4">Home</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
 
+<div>
+  <form class="form" (ngSubmit)="inserirPost()">
+    <h5>Nova postagem</h5>
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Titulo" [(ngModel)]="titulo" name="titulo">
+      <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Texto" [(ngModel)]="texto" name="texto"></textarea>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</div>

@@ -1,3 +1,6 @@
 .card:hover {
   background: cornsilk;
 }
+.centralizar-vertical {
+  vertical-align: center;
+}

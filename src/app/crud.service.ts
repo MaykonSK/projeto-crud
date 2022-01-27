@@ -15,4 +15,11 @@ export class CrudService {
   getDados(tipo): Observable<any> {
     return this.http.get(API+'/'+tipo)
   }
+
+  setDados(titulo: string, texto: string): Observable<any> {
+    return this.http.post(API+'/posts', {
+      title: titulo,
+      body: texto
+    })
+  }
 }
