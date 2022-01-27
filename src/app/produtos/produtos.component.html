@@ -1,0 +1,12 @@
+<h1>Produtos</h1>
+
+<div *ngIf="loading" class="spinner-border" role="status">
+  <span class="sr-only">Carregando...</span>
+</div>
+
+<div *ngFor="let imagem of dadosImagens">
+  <div *ngIf="!loading">
+    <img [src]="imagem.thumbnailUrl" alt="">
+    <p>{{imagem.title}}</p>
+  </div>
+</div>

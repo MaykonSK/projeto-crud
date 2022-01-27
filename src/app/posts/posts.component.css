@@ -1,0 +1,10 @@
+.centralizar {
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+}
+.direita {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}

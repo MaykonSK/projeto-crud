@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" [routerLink]="['']" routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}" >Home</a>
+      <a class="nav-item nav-link" [routerLink]="['imagens']" routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}" >Imagens</a>
+      <a class="nav-item nav-link" [routerLink]="['posts']" routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}" >Posts</a>
+      <a class="nav-item nav-link disabled" [routerLink]="['produtos']" routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}" >Produtos</a>
+      <a class="nav-item nav-link disabled" href="#">Cadastro</a>
+      <a class="nav-item nav-link disabled" href="#">Login</a>
+    </div>
+  </div>
+</nav>
