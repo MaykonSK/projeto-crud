@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CrudService } from 'src/app/crud.service';
 
 @Component({
   selector: 'app-nova-postagem',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovaPostagemComponent implements OnInit {
 
-  constructor() { }
+  titulo: ''
+  texto: ''
+
+  constructor(private crudService: CrudService, private router: Router) {
+
+  }
 
   ngOnInit() {
+  }
+
+  inserirPost() {
+    return this.crudService.setDados(this.titulo, this.texto).subscribe(dados => {
+      console.log(dados)
+      this.router.navigate(['posts']);
+    }, error => {
+
+    })
   }
 
 }

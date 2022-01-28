@@ -1,1 +1,12 @@
-<p>nova-postagem works!</p>
+<app-nav-post></app-nav-post>
+<br>
+<div>
+  <h5 class="text-center">Novo Post</h5>
+  <form class="form" (ngSubmit)="inserirPost()">
+    <div class="form-group">
+      <input class="form-control mb-2" type="text" placeholder="Titulo" [(ngModel)]="titulo" name="titulo">
+      <textarea name="" id="" cols="30" rows="10" class="form-control mb-2" placeholder="Texto" [(ngModel)]="texto" name="texto"></textarea>
+      <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </div>
+  </form>
+</div>

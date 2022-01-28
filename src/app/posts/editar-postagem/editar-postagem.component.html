@@ -1,0 +1,8 @@
+<h5>Editar</h5>
+<form (ngSubmit)="editarPost()">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Título" name="titulo" [(ngModel)]="titulo">
+    <input type="text" class="form-control" placeholder="Texto"  name="texto" [(ngModel)]="texto">
+    <button type="submit" class="btn btn-success">Salvar</button>
+  </div>
+</form>

@@ -9,23 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  posts: PostsModel
-  loading: boolean = true;
-
-  constructor(private crudService: CrudService) {
-    this.recuperarPosts();
-  }
+  constructor() {}
 
   ngOnInit() {
-  }
-
-  recuperarPosts() {
-    return this.crudService.getDados('posts').subscribe(dados => {
-      this.posts = dados;
-      this.loading = false
-    }, error => {
-      console.log(error)
-    })
   }
 
 }

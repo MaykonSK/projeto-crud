@@ -1,23 +1,4 @@
-<h2 class="centralizar">Posts</h2>
-
-<div>
-  <table class="table">
-    <thead class="bg-dark text-white m-2">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Titulo</th>
-        <th scope="col">Texto</th>
-        <th class="spinner-border" role="status" *ngIf="loading">
-          <span class="sr-only">Carregando...</span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let post of posts">
-        <th scope="row">{{ post.id }}</th>
-        <td>{{ post.title }}</td>
-        <td colspan="2">{{ post.body }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<app-nav-post></app-nav-post>
+<br>
+<app-lista-posts></app-lista-posts>
+<app-editar-postagem></app-editar-postagem>
