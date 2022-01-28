@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: '', component: PostsComponent},
   {path: 'nova-postagem', component: NovaPostagemComponent},
-  {path: 'editar-postagem', component: EditarPostagemComponent}
+  {path: 'editar-postagem/:id', component: EditarPostagemComponent}
 ];
 
 @NgModule({

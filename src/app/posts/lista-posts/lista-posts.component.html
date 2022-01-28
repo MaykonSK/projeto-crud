@@ -8,7 +8,7 @@
         <th class="spinner-border" role="status" *ngIf="loading">
           <span class="sr-only">Carregando...</span>
         </th>
-        <th scope="col">Opção</th>
+        <th class="direito" scope="col">Opção</th>
       </tr>
     </thead>
     <tbody>
@@ -16,7 +16,7 @@
         <th  scope="row">{{ post.id }}</th>
         <td>{{ post.title }}</td>
         <td>{{ post.body }}</td>
-        <td> <button class="btn btn-danger" (click)="deletarPost(post.id)">Deletar</button>⠀<button class="btn btn-success" (click)="editarPost(post.id)">Editar</button> </td>
+        <td class="direito"> <button class="btn btn-danger" (click)="deletarPost(post.id)">Deletar</button>⠀<button class="btn btn-success" (click)="recuperarId(post.id)">Editar</button> </td>
       </tr>
     </tbody>
   </table>

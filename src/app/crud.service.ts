@@ -10,8 +10,6 @@ const API = environment.apiUrl;
 })
 export class CrudService {
 
-  dado: any;
-
   constructor(private http: HttpClient) { }
 
   getDados(tipo): Observable<any> {
@@ -29,11 +27,11 @@ export class CrudService {
     return this.http.delete(API+'/posts/'+id)
   }
 
-  updatePost(id) {
-    return this.http.put(API+'/posts/'+id, this.dado)
+  updatePost(id: number, titulo: string, texto: string): Observable<any> {
+    return this.http.put(API+'/posts/'+id, {
+      title: titulo,
+      body: texto
+    })
   }
 
-  recuperarFormEdit(titulo: string, texto: string) {
-    this.dado = {title: titulo, body: texto}
-  }
 }

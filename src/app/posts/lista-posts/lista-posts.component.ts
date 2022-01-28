@@ -13,7 +13,7 @@ export class ListaPostsComponent implements OnInit {
   posts: PostsModel
   loading: boolean = true;
 
-  idPostRecuperado: number
+  idPost: number;
 
 
   constructor(private crudService: CrudService, private router: Router) {
@@ -41,12 +41,10 @@ export class ListaPostsComponent implements OnInit {
     })
   }
 
-  editarPost(id) {
-    return this.crudService.updatePost(id).subscribe(dados => {
-      this.router.navigate(['posts/editar-postagem'])
-    }, errror => {
-
-    })
+  recuperarId(id) {
+    this.idPost = id;
+    //console.log(this.idPost)
+    this.router.navigate(['posts/editar-postagem/'+id])
   }
 
 
