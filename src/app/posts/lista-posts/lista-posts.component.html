@@ -1,13 +1,16 @@
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="sucessDelete">
+  Registro deletado com sucesso!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <div>
   <table class="table">
     <thead class="bg-dark text-white">
-      <tr>
+      <tr class="">
         <th scope="col">ID</th>
         <th scope="col">Titulo</th>
         <th scope="col">Texto</th>
-        <th class="spinner-border" role="status" *ngIf="loading">
-          <span class="sr-only">Carregando...</span>
-        </th>
         <th class="direito" scope="col">Opção</th>
       </tr>
     </thead>
@@ -16,8 +19,37 @@
         <th  scope="row">{{ post.id }}</th>
         <td>{{ post.title }}</td>
         <td>{{ post.body }}</td>
-        <td class="direito"> <button class="btn btn-danger" (click)="deletarPost(post.id)">Deletar</button>⠀<button class="btn btn-success" (click)="recuperarId(post.id)">Editar</button> </td>
+        <td class="direito"> <button class="btn btn-danger" data-toggle="modal" data-target="#modalExemplo" (click)="recuperarId(post.id)">Deletar</button>⠀<button class="btn btn-success" (click)="recuperarIdEdit(post.id)">Editar</button> </td>
       </tr>
     </tbody>
   </table>
+  <div class="d-flex justify-content-center" *ngIf="loading">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div *ngIf="vazio == true" class="d-flex justify-content-center">
+    <p>Sem dados!</p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Deletar registro!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Você realmente deseja deletar esse registro?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-danger" (click)="deletarPost(idPost)" data-dismiss="modal">Deletar</button>
+      </div>
+    </div>
+  </div>
 </div>

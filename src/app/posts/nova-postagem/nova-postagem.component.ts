@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CrudService } from 'src/app/crud.service';
 
@@ -9,11 +10,13 @@ import { CrudService } from 'src/app/crud.service';
 })
 export class NovaPostagemComponent implements OnInit {
 
-  titulo: ''
-  texto: ''
+  titulo: any = ''
+  texto: any = ''
+
 
   constructor(private crudService: CrudService, private router: Router) {
-
+    // this.titulo = new FormControl('', Validators.required)
+    // this.texto = new FormControl('', Validators.required)
   }
 
   ngOnInit() {
@@ -22,10 +25,13 @@ export class NovaPostagemComponent implements OnInit {
   inserirPost() {
     return this.crudService.setDados(this.titulo, this.texto).subscribe(dados => {
       console.log(dados)
-      this.router.navigate(['posts']);
     }, error => {
 
     })
+  }
+
+  redirecionar() {
+    this.router.navigate(['posts'])
   }
 
 }

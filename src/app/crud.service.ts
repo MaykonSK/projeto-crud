@@ -34,4 +34,8 @@ export class CrudService {
     })
   }
 
+  getPost(id: number): Observable<any> {
+    return this.http.get(API+'/posts/'+id)
+  }
+
 }

@@ -1,0 +1,5 @@
+//Instalar json-server
+npm install -g json-server
+
+//iniciar servidor json
+json-server --watch db.json

@@ -14,7 +14,9 @@ export class ListaPostsComponent implements OnInit {
   loading: boolean = true;
 
   idPost: number;
+  vazio: boolean;
 
+  sucessDelete: boolean;
 
   constructor(private crudService: CrudService, private router: Router) {
     this.recuperarPosts();
@@ -27,6 +29,9 @@ export class ListaPostsComponent implements OnInit {
     return this.crudService.getDados('posts').subscribe(dados => {
       this.posts = dados;
       this.loading = false
+      if (dados.length == 0) {
+        this.vazio = true;
+      }
     }, error => {
       console.log(error)
     })
@@ -36,14 +41,19 @@ export class ListaPostsComponent implements OnInit {
     return this.crudService.deletePost(id).subscribe(dados => {
       console.log(dados)
       this.recuperarPosts();
+      this.sucessDelete = true;
     }, error => {
       console.log(error)
+      this.sucessDelete = false;
     })
   }
 
   recuperarId(id) {
     this.idPost = id;
-    //console.log(this.idPost)
+  }
+
+  recuperarIdEdit(id) {
+    this.idPost = id;
     this.router.navigate(['posts/editar-postagem/'+id])
   }
 

@@ -22,12 +22,24 @@ export class EditarPostagemComponent implements OnInit {
   ngOnInit() {
     //recuperar id da postagem
     this.postId = this.rotaAtiva.snapshot.params["id"]
+    console.log(this.postId)
+    this.recuperarPost();
   }
 
   editarPost() {
     return this.crudService.updatePost(this.postId, this.titulo, this.texto).subscribe(dados => {
       console.log(dados)
       this.router.navigate(['posts'])
+    }, error => {
+      console.log(error)
+    })
+  }
+
+  recuperarPost() {
+    return this.crudService.getPost(this.postId).subscribe(dados => {
+      console.log(dados)
+      this.titulo = dados.title;
+      this.texto = dados.body;
     }, error => {
       console.log(error)
     })

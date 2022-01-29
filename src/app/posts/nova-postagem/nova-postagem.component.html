@@ -4,9 +4,34 @@
   <h5 class="text-center">Novo Post</h5>
   <form class="form" (ngSubmit)="inserirPost()">
     <div class="form-group">
-      <input class="form-control mb-2" type="text" placeholder="Titulo" [(ngModel)]="titulo" name="titulo">
+      <input class="form-control mb-2" type="text" placeholder="Titulo" [(ngModel)]="titulo" name="titulo" validator>
       <textarea name="" id="" cols="30" rows="10" class="form-control mb-2" placeholder="Texto" [(ngModel)]="texto" name="texto"></textarea>
-      <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      <div *ngIf="titulo.length != 0 && texto.length != 0; else desativar">
+        <button type="submit" class="btn btn-primary w-100" data-toggle="modal" data-target="#modalExemplo">Enviar</button>
+      </div>
+      <ng-template #desativar>
+        <button class="btn btn-primary w-100" disabled>Enviar</button>
+      </ng-template>
     </div>
   </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Dados inserido com sucesso!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Você será redirecionado para a pagina de posts.
+      </div>
+      <div class="modal-footer">
+        <button (click)="redirecionar()" type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
 </div>
