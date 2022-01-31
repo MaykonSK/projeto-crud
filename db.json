@@ -1,25 +1,21 @@
 {
   "users": [
     {
-      "userId": 1,
-      "name": "Maycon"
-    },
-    {
-      "userId": 2,
-      "name": "Rodrigo"
-    },
-    {
-      "userId": 3,
-      "name": "Lucas"
-    }
-  ],
-  "posts": [
-    {
-      "title": "fdg",
-      "body": "dtrtd",
+      "nome": "maycon",
+      "sobrenome": "rodrigo",
+      "username": "maykon95",
+      "email": "mayconrodrigo1995@gmail.com",
+      "senha": "sdfsd",
+      "cep": "38050440",
+      "logradouro": "Rua Rio Grande do Norte",
+      "bairro": "Santa Maria",
+      "numeroCasa": "1519",
+      "uf": "MG",
+      "localidade": "Uberaba",
       "id": 1
     }
   ],
+  "posts": [],
   "photos": [
     {
       "albumId": 1,
@@ -162,7 +158,70 @@
       "thumbnailUrl": "https://via.placeholder.com/150/8985dc"
     }
   ],
-  "empresa": {
-    "nome": "Code Prestige"
-  }
+  "empresa": [
+    {
+      "nome": "Teste",
+      "id": 1
+    },
+    {
+      "nome": "Teste",
+      "id": 2
+    },
+    {
+      "nome": "Teste",
+      "id": 3
+    },
+    {
+      "nome": "maycon",
+      "sobrenome": "rodrigo",
+      "username": "maykon95",
+      "email": "mayconrodrigo1995@gmail.com",
+      "senha": "fdfsd",
+      "cep": "38050440",
+      "logradouro": null,
+      "numeroCasa": null,
+      "estado": null,
+      "municipio": null,
+      "id": 4
+    },
+    {
+      "nome": "maycon",
+      "sobrenome": "rodrigo",
+      "username": "maykon95",
+      "email": "mayconrodrigo1995@gmail.com",
+      "senha": "fdfsd",
+      "cep": "38050440",
+      "logradouro": null,
+      "numeroCasa": null,
+      "estado": null,
+      "municipio": null,
+      "id": 5
+    },
+    {
+      "nome": "maycon",
+      "sobrenome": "rodrigo",
+      "username": "sasa",
+      "email": "mayconrodrigo1995@gmail.com",
+      "senha": "saa",
+      "cep": "38050440",
+      "logradouro": null,
+      "numeroCasa": null,
+      "estado": null,
+      "municipio": null,
+      "id": 6
+    },
+    {
+      "nome": "maycon",
+      "sobrenome": "rodrigo",
+      "username": "sasa",
+      "email": "mayconrodrigo1995@gmail.com",
+      "senha": "saa",
+      "cep": "38050440",
+      "logradouro": null,
+      "numeroCasa": null,
+      "estado": null,
+      "municipio": null,
+      "id": 7
+    }
+  ]
 }

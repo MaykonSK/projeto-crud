@@ -7,7 +7,8 @@ const routes: Routes = [
   {path: 'imagens', loadChildren: () => import('./imagens/imagens.module').then(m => m.ImagensModule)},
   {path: 'posts', loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule)},
   {path: 'cadastrar', loadChildren: () => import('./conta/cadastro/cadastro.module').then(m => m.CadastroModule)},
-  {path: 'login', loadChildren: () => import('./conta/login/login.module').then(m => m.LoginModule)}
+  {path: 'login', loadChildren: () => import('./conta/login/login.module').then(m => m.LoginModule)},
+  {path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)}
 ];
 
 @NgModule({
