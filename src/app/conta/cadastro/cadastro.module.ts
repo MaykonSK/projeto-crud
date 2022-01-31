@@ -5,6 +5,8 @@ import { CadastroRoutingModule } from './cadastro-routing.module';
 import { CadastroComponent } from './cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgBrazil } from 'ng-brazil';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [CadastroComponent],
@@ -13,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgBrazil,
+    TextMaskModule
   ]
 })
 export class CadastroModule { }

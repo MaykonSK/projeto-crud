@@ -2,7 +2,8 @@ import { EnderecoInterface } from './endereco-interface';
 import { UsuarioInterface } from './usuario-interface';
 import { CadastroService } from './cadastro.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MASKS, NgBrazilValidators } from 'ng-brazil';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,11 +12,15 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class CadastroComponent implements OnInit {
 
+  public MASKS = MASKS;
+
   cadastro: FormGroup;
 
   endereco: EnderecoInterface;
 
   mensagem: string;
+
+  email: boolean
 
   //instanciando o form group
   /*
@@ -40,7 +45,7 @@ export class CadastroComponent implements OnInit {
       username: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]], //para mais de uma validação, é necessário colocar outro array dentro
       senha: [null, Validators.required],
-      cep: [null, Validators.required],
+      cep: [null, [Validators.required, NgBrazilValidators.cep]],
       logradouro: [{value: null, disabled: true}, Validators.required],
       bairro: [{value: null, disabled: true}, Validators.required],
       numeroCasa: [null],
@@ -65,15 +70,15 @@ export class CadastroComponent implements OnInit {
 
 
   localizarCep() {
-    if (this.cadastro.value.cep.length == 8) {
-      const cep = this.cadastro.value.cep;
+    if (this.cadastro.get('cep').valid) {
+      const cep = this.cadastro.value.cep.replace("-", "").replace(".", ""); //replace - refatorar caracter para vazio
       return this.cadastroSerivce.getCep(cep).subscribe(dados => {
         this.endereco = dados;
         this.cadastro.patchValue({logradouro: this.endereco.logradouro}) //atualizar o valor do value, que é nulo
         this.cadastro.patchValue({uf: this.endereco.uf})
         this.cadastro.patchValue({localidade: this.endereco.localidade})
         this.cadastro.patchValue({bairro: this.endereco.bairro})
-        if (this.endereco.logradouro.length == 0 || this.endereco.bairro.length == 0)  {
+        if (!this.endereco.logradouro.length || !this.endereco.bairro.length)  {
           this.cadastro.get('logradouro').enable(); //ativar input
           this.mensagem = 'Não foi possivel encontrar o campo. Por favor, insira acima.'
         } else {
@@ -81,7 +86,7 @@ export class CadastroComponent implements OnInit {
           this.mensagem = ''
         }
       }, error => {
-        console.log('Cep não encontrado!\n'+error)
+        //console.log('Cep não encontrado!\n'+error)
       })
     }
   }
@@ -94,4 +99,5 @@ export class CadastroComponent implements OnInit {
     })
     }
   }
+
 }

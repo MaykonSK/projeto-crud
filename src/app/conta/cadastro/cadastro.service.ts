@@ -1,4 +1,3 @@
-import { EnderecoInterface } from './endereco-interface';
 import { UsuarioInterface } from './usuario-interface';
 import { environment } from './../../../environments/environment.prod';
 import { HttpClient } from "@angular/common/http";
