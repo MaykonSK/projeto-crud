@@ -1,27 +1,40 @@
-# ECommerce
+# Projeto Crud Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
 
-## Development server
+# Clone esse projeto e teste
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+git clone https://github.com/MaykonSK/projeto-crud.git
 
-## Code scaffolding
+# Instale os modulos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+npm install
 
-## Build
+# Json
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Crie um arquivo db.json na raiz do projeto
 
-## Running unit tests
+# Instalar json-server
+npm install -g json-server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Iniciar json-server
+json-server --watch db.json
 
-## Running end-to-end tests
+# Ng Brazil
+https://github.com/mariohmol/ng-brazil
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Modules:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+CPF
+CNPJ
+RG
+Inscrição Estadual
+Telefone e Celular
+CEP
+Currency (Dinheiro)
+Time (horas e minutos)
+Number (numero e ponto decimal)
+Placa de Carro
+Renavam
+Título de Eleitor
+Proceso Jurídico
