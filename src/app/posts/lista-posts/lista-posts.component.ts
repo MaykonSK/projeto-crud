@@ -28,6 +28,7 @@ export class ListaPostsComponent implements OnInit {
   recuperarPosts() {
     return this.crudService.getDados('posts').subscribe(dados => {
       this.posts = dados;
+      console.log(dados)
       this.loading = false
       if (dados.length == 0) {
         this.vazio = true;

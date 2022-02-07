@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://localhost:44329'
   //apiUrl: 'https://my-json-server.typicode.com/MaykonSK/API-Projeto-Crud'
 };
 
