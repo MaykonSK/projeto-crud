@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgBrazil } from 'ng-brazil';
+import { OwlModule } from 'angular-owl-carousel';
+import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { NgBrazil } from 'ng-brazil';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgBrazil
+    NgBrazil,
+    OwlModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

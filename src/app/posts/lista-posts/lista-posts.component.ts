@@ -11,6 +11,7 @@ import { PostsModel } from '../posts-model';
 export class ListaPostsComponent implements OnInit {
 
   posts: PostsModel
+  
   loading: boolean = true;
 
   idPost: number;
@@ -28,9 +29,9 @@ export class ListaPostsComponent implements OnInit {
   recuperarPosts() {
     return this.crudService.getDados('posts').subscribe(dados => {
       this.posts = dados;
-      console.log(dados)
+      console.log(this.posts)
       this.loading = false
-      if (dados.length == 0) {
+      if (!dados) {
         this.vazio = true;
       }
     }, error => {
@@ -57,7 +58,4 @@ export class ListaPostsComponent implements OnInit {
     this.idPost = id;
     this.router.navigate(['posts/editar-postagem/'+id])
   }
-
-
-
 }

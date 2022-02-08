@@ -1,6 +1,6 @@
 export interface PostsModel {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
+  cpfUsuario: number;
+  idPost: number;
+  tituloPost: string;
+  textoPost: string;
 }

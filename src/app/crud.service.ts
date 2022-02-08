@@ -2,6 +2,8 @@ import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { PostsModel } from './posts/posts-model';
+import { map } from 'rxjs/operators';
 
 const API = environment.apiUrl;
 
@@ -12,14 +14,17 @@ export class CrudService {
 
   constructor(private http: HttpClient) { }
 
-  getDados(tipo): Observable<any> {
-    return this.http.get(API+'/'+tipo)
+  getDados(tipo): Observable<PostsModel> {
+    return this.http.get<PostsModel>(API+'/'+tipo)
+
+    // formata para json
+    // .pipe(map((res:Response) => res.json()));
   }
 
   setDados(titulo: string, texto: string): Observable<any> {
     return this.http.post(API+'/posts', {
-      title: titulo,
-      body: texto
+      tituloPost: titulo,
+      textoPost: texto
     })
   }
 
@@ -29,8 +34,8 @@ export class CrudService {
 
   updatePost(id: number, titulo: string, texto: string): Observable<any> {
     return this.http.put(API+'/posts/'+id, {
-      title: titulo,
-      body: texto
+      tituloPost: titulo,
+      textoPost: texto
     })
   }
 
@@ -39,3 +44,4 @@ export class CrudService {
   }
 
 }
+

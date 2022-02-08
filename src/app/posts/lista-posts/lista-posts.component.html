@@ -16,10 +16,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let post of posts">
-        <th  scope="row">{{ post.id }}</th>
-        <td>{{ post.title }}</td>
-        <td>{{ post.body }}</td>
-        <td class="direito"> <button class="btn btn-danger" data-toggle="modal" data-target="#modalExemplo" (click)="recuperarId(post.id)">Deletar</button>⠀<button class="btn btn-success" (click)="recuperarIdEdit(post.id)">Editar</button> </td>
+        <th  scope="row">{{ post.idPost }}</th>
+        <td>{{ post.tituloPost }}</td>
+        <td>{{ post.textoPost }}</td>
+        <td class="direito"> <button class="btn btn-danger" data-toggle="modal" data-target="#modalExemplo" (click)="recuperarId(post.idPost)">Deletar</button>⠀<button class="btn btn-success" (click)="recuperarIdEdit(post.idPost)">Editar</button> </td>
       </tr>
     </tbody>
   </table>
@@ -53,3 +53,6 @@
     </div>
   </div>
 </div>
+<pre>
+  {{posts | json}}
+</pre>
