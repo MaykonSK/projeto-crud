@@ -14,6 +14,7 @@ export class EditarPostagemComponent implements OnInit {
 
   titulo: string
   texto: string
+  cpf: number
 
   postId: number
 
@@ -27,7 +28,7 @@ export class EditarPostagemComponent implements OnInit {
   }
 
   editarPost() {
-    return this.crudService.updatePost(this.postId, this.titulo, this.texto).subscribe(dados => {
+    return this.crudService.updatePost(this.cpf, this.postId, this.titulo, this.texto).subscribe(dados => {
       console.log(dados)
       this.router.navigate(['posts'])
     }, error => {
@@ -38,8 +39,9 @@ export class EditarPostagemComponent implements OnInit {
   recuperarPost() {
     return this.crudService.getPost(this.postId).subscribe(dados => {
       console.log(dados)
-      this.titulo = dados.title;
-      this.texto = dados.body;
+      this.titulo = dados.tituloPost;
+      this.texto = dados.textoPost;
+      this.cpf = dados.cpfUsuario;
     }, error => {
       console.log(error)
     })

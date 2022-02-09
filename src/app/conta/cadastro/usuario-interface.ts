@@ -1,8 +1,8 @@
 export interface UsuarioInterface {
-  userId: number;
+  id_usuario: number,
+  cpf: string
   nome: string;
   sobrenome: string;
-  username: string;
   email: string;
   senha: string;
   cep: string;

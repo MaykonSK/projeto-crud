@@ -40,9 +40,9 @@ export class CadastroComponent implements OnInit {
 
   configurarFormulario() {
     this.cadastro = this.formBuilder.group({
+      cpf: [null, [Validators.required, NgBrazilValidators.cpf]],
       nome: [null, Validators.required],
       sobrenome: [null, Validators.required],
-      username: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]], //para mais de uma validação, é necessário colocar outro array dentro
       senha: [null, Validators.required],
       cep: [null, [Validators.required, NgBrazilValidators.cep]],
@@ -91,10 +91,16 @@ export class CadastroComponent implements OnInit {
     }
   }
 
+  formatarCpf(cpf: string) {
+    return parseInt(this.cadastro.value.cpf.replace(".", "").replace(".", "").replace("-", ""));
+  }
+
+
   cadastrarUsuario() {
     if (this.cadastro.valid) {
       const novoUsuario = this.cadastro.getRawValue() as UsuarioInterface; //getRawValue() recupera todos os dados do formulario cadastro
-      this.cadastroSerivce.insertDados(novoUsuario).subscribe(dados => {
+      console.log(novoUsuario)
+      return this.cadastroSerivce.insertDados(novoUsuario).subscribe(dados => {
       console.log(dados)
     })
     }

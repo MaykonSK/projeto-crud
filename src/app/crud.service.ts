@@ -21,10 +21,12 @@ export class CrudService {
     // .pipe(map((res:Response) => res.json()));
   }
 
-  setDados(titulo: string, texto: string): Observable<any> {
+  setDados(cpf: number, titulo: string, texto: string): Observable<any> {
     return this.http.post(API+'/posts', {
       tituloPost: titulo,
-      textoPost: texto
+      textoPost: texto,
+      cpfUsuario: cpf,
+      
     })
   }
 
@@ -32,10 +34,12 @@ export class CrudService {
     return this.http.delete(API+'/posts/'+id)
   }
 
-  updatePost(id: number, titulo: string, texto: string): Observable<any> {
+  updatePost(cpf: number, id: number, titulo: string, texto: string): Observable<any> {
     return this.http.put(API+'/posts/'+id, {
       tituloPost: titulo,
-      textoPost: texto
+      textoPost: texto,
+      cpfUsuario: cpf,
+      idPost: id
     })
   }
 

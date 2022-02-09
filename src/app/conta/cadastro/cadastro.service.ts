@@ -19,10 +19,10 @@ export class CadastroService {
   }
 
   getDados(): Observable<any> {
-    return this.htpp.get(API+'/users');
+    return this.htpp.get(API+'/usuarios');
   }
 
   insertDados(novoUsuario: UsuarioInterface): Observable<any> {
-    return this.htpp.post(API+'/users', novoUsuario)
+    return this.htpp.post(API+'/usuarios', novoUsuario)
   }
 }

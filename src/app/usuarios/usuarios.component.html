@@ -2,7 +2,7 @@
   <table class="table">
     <thead class="bg-dark text-white">
       <tr class="">
-        <th scope="col">Nome de usuário</th>
+        <th scope="col">CPF</th>
         <th scope="col">Nome</th>
         <th scope="col">E-mail</th>
         <th scope="col">CEP</th>
@@ -12,7 +12,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <th  scope="row">{{ user.username }}</th>
+        <th  scope="row">{{ user.cpf }}</th>
         <td>{{ user.nome +' '+ user.sobrenome }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.cep}}</td>
@@ -29,3 +29,7 @@
   <div *ngIf="vazio == true" class="d-flex justify-content-center">
     <p>Sem dados!</p>
   </div>
+
+  <pre>
+    {{users | json}}
+  </pre>

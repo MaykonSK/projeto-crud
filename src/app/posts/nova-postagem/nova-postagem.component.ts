@@ -12,6 +12,7 @@ export class NovaPostagemComponent implements OnInit {
 
   titulo: any = ''
   texto: any = ''
+  cpf: any = ''
 
 
   constructor(private crudService: CrudService, private router: Router) {
@@ -23,7 +24,7 @@ export class NovaPostagemComponent implements OnInit {
   }
 
   inserirPost() {
-    return this.crudService.setDados(this.titulo, this.texto).subscribe(dados => {
+    return this.crudService.setDados(this.cpf, this.titulo, this.texto).subscribe(dados => {
       console.log(dados)
     }, error => {
 
