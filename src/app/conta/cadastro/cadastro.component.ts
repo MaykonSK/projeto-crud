@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MASKS, NgBrazilValidators } from 'ng-brazil';
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -22,6 +23,8 @@ export class CadastroComponent implements OnInit {
 
   email: boolean
 
+  estados: any;
+
   //instanciando o form group
   /*
   cadastro = new FormGroup({
@@ -36,6 +39,7 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit() {
     this.configurarFormulario()
+    this.localizarEstado();
   }
 
   configurarFormulario() {
@@ -104,6 +108,15 @@ export class CadastroComponent implements OnInit {
       console.log(dados)
     })
     }
+  }
+
+  localizarEstado() {
+    return this.cadastroSerivce.getEstados().subscribe(dados => {
+      this.estados = dados;
+      console.log(this.estados)
+    }, error => {
+
+    })
   }
 
 }

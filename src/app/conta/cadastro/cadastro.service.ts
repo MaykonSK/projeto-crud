@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 
 const APICEP = "https://viacep.com.br/ws";
 const API = environment.apiUrl;
+const ApiEstados = 'https://servicodados.ibge.gov.br/api/v1/localidades/distritos'
 
 @Injectable({
   providedIn: "root",
@@ -24,5 +25,9 @@ export class CadastroService {
 
   insertDados(novoUsuario: UsuarioInterface): Observable<any> {
     return this.htpp.post(API+'/usuarios', novoUsuario)
+  }
+
+  getEstados(): Observable<any> {
+    return this.htpp.get(ApiEstados);
   }
 }

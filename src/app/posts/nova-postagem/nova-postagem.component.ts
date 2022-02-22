@@ -13,6 +13,7 @@ export class NovaPostagemComponent implements OnInit {
   titulo: any = ''
   texto: any = ''
   cpf: any = ''
+  erro: boolean;
 
 
   constructor(private crudService: CrudService, private router: Router) {
@@ -25,9 +26,12 @@ export class NovaPostagemComponent implements OnInit {
 
   inserirPost() {
     return this.crudService.setDados(this.cpf, this.titulo, this.texto).subscribe(dados => {
-      console.log(dados)
-    }, error => {
 
+    }, error => {
+      console.log('Ocorreu um erro: '+error.status)
+      if (error.status == 500) {
+        this.erro = true;
+      }
     })
   }
 

@@ -28,7 +28,7 @@ export class UsuariosComponent implements OnInit {
         this.vazio = true
       }
     }, error => {
-
+      
     })
   }
 

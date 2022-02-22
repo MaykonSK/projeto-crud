@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgBrazil } from 'ng-brazil';
 import { OwlModule } from 'angular-owl-carousel';
 import { PostsModule } from './posts/posts.module';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { PostsModule } from './posts/posts.module';
     AppRoutingModule,
     HttpClientModule,
     NgBrazil,
-    OwlModule,
+    OwlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

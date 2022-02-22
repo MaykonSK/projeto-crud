@@ -8,6 +8,8 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './posts.component';
 import { NovaPostagemComponent } from './nova-postagem/nova-postagem.component';
 import { FormsModule } from '@angular/forms';
+import { UsuariosModule } from '../usuarios/usuarios.module';
+import { UsuariosComponent } from '../usuarios/usuarios.component';
 
 @NgModule({
   declarations: [PostsComponent, NovaPostagemComponent, ListaPostsComponent, NavPostComponent, EditarPostagemComponent],

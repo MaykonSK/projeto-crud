@@ -22,16 +22,23 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Dados inserido com sucesso!</h5>
+        <h5 class="modal-title" id="exampleModalLabel" *ngIf="!erro; else msgErro">Dados inserido com sucesso!</h5>
+        <ng-template #msgErro><h5 class="modal-title text-danger" id="exampleModalLabel">CPF inválido ou não existe na base de dados!</h5></ng-template>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div *ngIf="!erro; else Erro" class="modal-body">
         Você será redirecionado para a pagina de posts.
       </div>
+      <ng-template #Erro>
+        <div class="modal-body">
+          Tente novamente!
+        </div>
+      </ng-template>
       <div class="modal-footer">
-        <button (click)="redirecionar()" type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+        <button *ngIf="!erro; else ficar" (click)="redirecionar()" type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+        <ng-template #ficar><button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button></ng-template>
       </div>
     </div>
   </div>

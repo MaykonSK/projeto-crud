@@ -1,3 +1,9 @@
 <app-nav-post></app-nav-post>
 <br>
 <app-lista-posts></app-lista-posts>
+
+
+<button (click)="ativarComponent1()">Carregar componente</button>
+<button (click)="ativarComponent2()">Carregar componente 2</button>
+<app-nova-postagem *ngIf="component1"></app-nova-postagem>
+<app-lista-posts *ngIf="component2"></app-lista-posts>

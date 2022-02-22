@@ -21,7 +21,7 @@ export class CrudService {
     // .pipe(map((res:Response) => res.json()));
   }
 
-  setDados(cpf: number, titulo: string, texto: string): Observable<any> {
+  setDados(cpf: string, titulo: string, texto: string): Observable<any> {
     return this.http.post(API+'/posts', {
       tituloPost: titulo,
       textoPost: texto,

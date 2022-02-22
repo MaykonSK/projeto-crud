@@ -53,7 +53,8 @@
       <button [disabled]="cadastro.invalid" (click)="cadastrarUsuario()" class="btn btn-success w-100 mb-2">Cadastrar</button>
   </form>
 </div>
-<pre>
-  {{dados | json}}
-  {{endereco | json}}
-</pre>
+
+<select class="form-select" aria-label="Default select example">
+  <option selected>Selecione o estado</option>
+  <option *ngFor="let estado of estados">{{estado.nome}}</option>
+</select>
