@@ -8,7 +8,8 @@
   </div>
 
   <div class="row">
-    <div class="col-md-2" *ngFor="let imagem of dadosImagens">
+    <cdk-virtual-scroll-viewport  style="height: 1000px" itemSize="1" >
+    <div class="col-md-2" *cdkVirtualFor="let imagem of dadosImagens">
       <div class="card">
         <img class="card-img-top" [src]="imagem.url" alt="imagem" class="img-thumbnail">
         <div class="card-body">
@@ -16,6 +17,7 @@
         </div>
       </div>
     </div>
+    </cdk-virtual-scroll-viewport>
   </div>
 
 

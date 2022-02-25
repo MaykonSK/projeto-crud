@@ -10,6 +10,7 @@ import { NgBrazil } from 'ng-brazil';
 import { OwlModule } from 'angular-owl-carousel';
 import { PostsModule } from './posts/posts.module';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     AppRoutingModule,
     HttpClientModule,
     NgBrazil,
-    OwlModule
+    OwlModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

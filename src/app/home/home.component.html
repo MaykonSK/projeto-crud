@@ -8,24 +8,8 @@
       <a class="btn btn-primary btn-lg" [routerLink]="['cadastrar']" routerLinkActive="text-black" [routerLinkActiveOptions]="{exact: true}" role="button">Cadastre-se</a>
     </p>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
+  <cdk-virtual-scroll-viewport  style="height: 500px" itemSize="1" >
+    <ng-container *cdkVirtualFor="let n of numbers">
+      <li> {{n}} </li>
+    </ng-container>
+  </cdk-virtual-scroll-viewport>

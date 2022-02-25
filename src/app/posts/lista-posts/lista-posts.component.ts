@@ -11,7 +11,7 @@ import { PostsModel } from '../posts-model';
 export class ListaPostsComponent implements OnInit {
 
   posts: PostsModel
-  
+
   loading: boolean = true;
 
   idPost: number;
@@ -27,7 +27,7 @@ export class ListaPostsComponent implements OnInit {
   }
 
   recuperarPosts() {
-    return this.crudService.getDados('posts').subscribe(dados => {
+    return this.crudService.getDados('comments').subscribe(dados => {
       this.posts = dados;
       console.log(this.posts)
       this.loading = false
